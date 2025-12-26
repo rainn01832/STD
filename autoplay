@@ -32,39 +32,22 @@ end
 -- ===========================
 -- MIRACLE
 waitIf(200)
-Func.SpawnNewTower:InvokeServer(
-    "48627ed9-f786-4097-a883-4cfc220dc591",
-    CFrame.new(-10.005224, 7.768928, -153.216797)
-)
-
+Func.SpawnNewTower:InvokeServer("48627ed9-f786-4097-a883-4cfc220dc591", CFrame.new(-10.005224, 7.768928, -153.216797))
 waitIf(300)
-Func.SpawnNewTower:InvokeServer(
-    "3f399d07-93ec-483c-a63f-308acbd26f72",
-    CFrame.new(-21.537626, 7.768930, -152.196274)
-)
-
+Func.SpawnNewTower:InvokeServer("3f399d07-93ec-483c-a63f-308acbd26f72", CFrame.new(-21.537626, 7.768930, -152.196274))
 waitIf(300)
 Func.UpgradeTower:InvokeServer(workspace.Towers.MiracleSorcerer)
-
 waitIf(350)
 Func.UpgradeTower:InvokeServer(workspace.Towers.MiracleSorcerer2)
-
 waitIf(500)
 Func.UpgradeTower:InvokeServer(workspace.Towers.MiracleSorcerer3)
 
 -- ===========================
 -- TREE OF LIFE PLACE
 waitIf(350)
-Func.SpawnNewTower:InvokeServer(
-    "56301656-eb8e-41df-84fa-a15170d61edb",
-    CFrame.new(9.464224, 7.893932, -131.406799)
-)
-
+Func.SpawnNewTower:InvokeServer("56301656-eb8e-41df-84fa-a15170d61edb", CFrame.new(9.464224, 7.893932, -131.406799))
 waitIf(350)
-Func.SpawnNewTower:InvokeServer(
-    "56301656-eb8e-41df-84fa-a15170d61edb",
-    CFrame.new(7.774872, 7.893932, -123.430458)
-)
+Func.SpawnNewTower:InvokeServer("56301656-eb8e-41df-84fa-a15170d61edb", CFrame.new(7.774872, 7.893932, -123.430458))
 
 -- ===========================
 -- TOL UPGRADE FLOW
@@ -80,29 +63,22 @@ Func.UpgradeTower:InvokeServer(workspace.Towers.TreeOfLife2)
 waitIf(1100)
 Func.UpgradeTower:InvokeServer(workspace.Towers.TreeOfLife2)
 
--- Lần 3: TOL 1
-waitIf(3000)
-Func.UpgradeTower:InvokeServer(workspace.Towers.TreeOfLife3)
-
 -- ===========================
 -- STRONGEST
 waitIf(2000)
-Func.SpawnNewTower:InvokeServer(
-    "dcdb3c80-9ceb-4118-9522-93b407e83842",
-    CFrame.new(-9.222792, 7.768928, -134.635178)
-)
+Func.SpawnNewTower:InvokeServer("dcdb3c80-9ceb-4118-9522-93b407e83842", CFrame.new(-9.222792, 7.768928, -134.635178))
 
--- Lần 3: TOL 2
+-- ===========================
+-- Lần 3: TOL 1 và TOL 2
+waitIf(3000)
+Func.UpgradeTower:InvokeServer(workspace.Towers.TreeOfLife3)
 waitIf(3000)
 Func.UpgradeTower:InvokeServer(workspace.Towers.TreeOfLife3)
 
 -- ===========================
 -- KING
 waitIf(2400)
-Func.SpawnNewTower:InvokeServer(
-    "48d7c493-dcaf-4b3d-8489-f46c7ba7ca97",
-    CFrame.new(-8.413580, 7.768928, -130.467712)
-)
+Func.SpawnNewTower:InvokeServer("48d7c493-dcaf-4b3d-8489-f46c7ba7ca97", CFrame.new(-8.413580, 7.768928, -130.467712))
 
 -- ===========================
 -- Lần 4: TOL 1 và TOL 2
@@ -115,13 +91,10 @@ Func.UpgradeTower:InvokeServer(workspace.Towers.TreeOfLife4)
 -- STRONGEST UPGRADE
 waitIf(8600)
 Func.UpgradeTower:InvokeServer(workspace.Towers.StrongestSorcererEvo)
-
 waitIf(11400)
 Func.UpgradeTower:InvokeServer(workspace.Towers.StrongestSorcererEvo1)
-
 waitIf(25100)
 Func.UpgradeTower:InvokeServer(workspace.Towers.StrongestSorcererEvo2)
-
 waitIf(36400)
 Func.UpgradeTower:InvokeServer(workspace.Towers.StrongestSorcererEvo3)
 
