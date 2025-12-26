@@ -1,0 +1,161 @@
+local player = game.Players.LocalPlayer
+local Money = player:WaitForChild("leaderstats"):WaitForChild("Money")
+
+-- Đợi 0.4 giây trước khi bắt đầu
+task.wait(0.4)
+
+-- Bật AutoSkip
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("AutoSkip"):FireServer()
+
+-- Hàm đợi đủ tiền
+local function waitIf(amount)
+    while Money.Value < amount do
+        task.wait(0.5)
+    end
+end
+
+local RS = game:GetService("ReplicatedStorage")
+local Functions = RS:WaitForChild("Functions")
+
+-- ===========================
+-- Đặt MiracleSorcerer >= 200
+waitIf(200)
+Functions:WaitForChild("SpawnNewTower"):InvokeServer(
+    "48627ed9-f786-4097-a883-4cfc220dc591",
+    CFrame.new(-10.005224, 7.768928, -153.216797)
+)
+
+-- Đặt ShadowSorcerer >= 300
+waitIf(300)
+Functions:WaitForChild("SpawnNewTower"):InvokeServer(
+    "3f399d07-93ec-483c-a63f-308acbd26f72",
+    CFrame.new(-21.537626, 7.768930, -152.196274)
+)
+
+-- Nâng Miracle lần 1 >= 300
+waitIf(300)
+Functions:WaitForChild("UpgradeTower"):InvokeServer(
+    workspace.Towers:WaitForChild("MiracleSorcerer")
+)
+
+-- Nâng Miracle lần 2 >= 350
+waitIf(350)
+Functions:WaitForChild("UpgradeTower"):InvokeServer(
+    workspace.Towers:WaitForChild("MiracleSorcerer1")
+)
+
+-- Nâng Miracle lần 3 >= 500
+waitIf(500)
+Functions:WaitForChild("UpgradeTower"):InvokeServer(
+    workspace.Towers:WaitForChild("MiracleSorcerer2")
+)
+
+-- ===========================
+-- Đặt TreeOfLife vị trí 1 >= 350
+waitIf(350)
+Functions:WaitForChild("SpawnNewTower"):InvokeServer(
+    "56301656-eb8e-41df-84fa-a15170d61edb",
+    CFrame.new(9.464224, 7.893932, -131.406799)
+)
+
+-- Đặt TreeOfLife vị trí 2 >= 350
+waitIf(350)
+Functions:WaitForChild("SpawnNewTower"):InvokeServer(
+    "56301656-eb8e-41df-84fa-a15170d61edb",
+    CFrame.new(7.774872, 7.893932, -123.430458)
+)
+
+-- Nâng TreeOfLife lần 1 cho unit 1 >= 700
+waitIf(700)
+Functions:WaitForChild("UpgradeTower"):InvokeServer(
+    workspace.Towers:WaitForChild("TreeOfLife")
+)
+
+-- Nâng TreeOfLife lần 1 cho unit 2 >= 700
+waitIf(700)
+Functions:WaitForChild("UpgradeTower"):InvokeServer(
+    workspace.Towers:WaitForChild("TreeOfLife")
+)
+
+-- Nâng TreeOfLife lần 2 cho unit 1 >= 1100
+waitIf(1100)
+Functions:WaitForChild("UpgradeTower"):InvokeServer(
+    workspace.Towers:WaitForChild("TreeOfLife1")
+)
+
+-- Nâng TreeOfLife lần 2 cho unit 2 >= 1100
+waitIf(1100)
+Functions:WaitForChild("UpgradeTower"):InvokeServer(
+    workspace.Towers:WaitForChild("TreeOfLife1")
+)
+
+-- Nâng TreeOfLife lần 3 cho unit 1 >= 3000
+waitIf(3000)
+Functions:WaitForChild("UpgradeTower"):InvokeServer(
+    workspace.Towers:WaitForChild("TreeOfLife2")
+)
+
+-- Nâng TreeOfLife lần 3 cho unit 2 >= 3000
+waitIf(3000)
+Functions:WaitForChild("UpgradeTower"):InvokeServer(
+    workspace.Towers:WaitForChild("TreeOfLife2")
+)
+
+-- ===========================
+-- Đặt StrongestSorcererEvo >= 2000
+waitIf(2000)
+Functions:WaitForChild("SpawnNewTower"):InvokeServer(
+    "dcdb3c80-9ceb-4118-9522-93b407e83842",
+    CFrame.new(-9.222792, 7.768928, -134.635178)
+)
+
+-- Đặt KingOfCursesEvo >= 2400
+waitIf(2400)
+Functions:WaitForChild("SpawnNewTower"):InvokeServer(
+    "48d7c493-dcaf-4b3d-8489-f46c7ba7ca97",
+    CFrame.new(-8.413580, 7.768928, -130.467712)
+)
+
+-- ===========================
+-- Nâng TreeOfLife lần 4 cho unit 1 >= 9000
+waitIf(9000)
+Functions:WaitForChild("UpgradeTower"):InvokeServer(
+    workspace.Towers:WaitForChild("TreeOfLife3")
+)
+
+-- Nâng TreeOfLife lần 4 cho unit 2 >= 9000
+waitIf(9000)
+Functions:WaitForChild("UpgradeTower"):InvokeServer(
+    workspace.Towers:WaitForChild("TreeOfLife3")
+)
+
+-- Nâng Strongest lần 1 >= 8600
+waitIf(8600)
+Functions:WaitForChild("UpgradeTower"):InvokeServer(
+    workspace.Towers:WaitForChild("StrongestSorcererEvo")
+)
+
+-- Nâng Strongest lần 2 >= 11400
+waitIf(11400)
+Functions:WaitForChild("UpgradeTower"):InvokeServer(
+    workspace.Towers:WaitForChild("StrongestSorcererEvo1")
+)
+
+-- Nâng Strongest lần 3 >= 25100
+waitIf(25100)
+Functions:WaitForChild("UpgradeTower"):InvokeServer(
+    workspace.Towers:WaitForChild("StrongestSorcererEvo2")
+)
+
+-- Nâng Strongest lần 4 >= 36400
+waitIf(36400)
+Functions:WaitForChild("UpgradeTower"):InvokeServer(
+    workspace.Towers:WaitForChild("StrongestSorcererEvo3")
+)
+
+-- ===========================
+-- Replay sau khi nâng xong
+while true do
+    task.wait(5)
+    RS:WaitForChild("Events"):WaitForChild("Replay"):FireServer()
+end
