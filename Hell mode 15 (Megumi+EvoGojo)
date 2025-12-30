@@ -12,17 +12,30 @@ task.wait(0.4)
 -- Auto Skip khi bắt đầu
 RS:WaitForChild("Remotes"):WaitForChild("AutoSkip"):FireServer()
 
--- Hàm đợi đủ tiền
+-- Đợi đủ tiền
 local function waitIf(amount)
     while Money.Value < amount do
         task.wait(0.3)
     end
 end
 
+-- Spam nâng trong 20 giây
+local function spamUpgrade(towerName)
+    local start = tick()
+    while tick() - start < 20 do
+        pcall(function()
+            Func.UpgradeTower:InvokeServer(
+                workspace.Towers:WaitForChild(towerName)
+            )
+        end)
+        task.wait(0.15)
+    end
+end
+
 -- ===========================
--- SHADOW >= 300 (vị trí mới)
+-- SHADOW >= 300
 waitIf(300)
-local shadowArgs = {
+Func.SpawnNewTower:InvokeServer(
     "3f399d07-93ec-483c-a63f-308acbd26f72",
     CFrame.new(
         27.351943969726562,
@@ -32,13 +45,12 @@ local shadowArgs = {
         0, 1, 0,
         8.742277657347586e-08, 0, -1
     )
-}
-Func.SpawnNewTower:InvokeServer(unpack(shadowArgs))
+)
 
 -- ===========================
--- STRONGEST >= 2000 (vị trí mới)
+-- STRONGEST >= 2000
 waitIf(2000)
-local strongestArgs = {
+Func.SpawnNewTower:InvokeServer(
     "dcdb3c80-9ceb-4118-9522-93b407e83842",
     CFrame.new(
         48.132850646972656,
@@ -48,25 +60,25 @@ local strongestArgs = {
         0, 1, 0,
         8.742277657347586e-08, 0, -1
     )
-}
-Func.SpawnNewTower:InvokeServer(unpack(strongestArgs))
+)
 
 -- ===========================
--- STRONGEST UPGRADE
+-- STRONGEST UPGRADE + SPAM 20s
+
 waitIf(8600)
-Func.UpgradeTower:InvokeServer(workspace.Towers.StrongestSorcererEvo)
+spamUpgrade("StrongestSorcererEvo")
 
 waitIf(11400)
-Func.UpgradeTower:InvokeServer(workspace.Towers.StrongestSorcererEvo2)
+spamUpgrade("StrongestSorcererEvo2")
 
 waitIf(25100)
-Func.UpgradeTower:InvokeServer(workspace.Towers.StrongestSorcererEvo3)
+spamUpgrade("StrongestSorcererEvo3")
 
 waitIf(36400)
-Func.UpgradeTower:InvokeServer(workspace.Towers.StrongestSorcererEvo4)
+spamUpgrade("StrongestSorcererEvo4")
 
 waitIf(61700)
-Func.UpgradeTower:InvokeServer(workspace.Towers.StrongestSorcererEvo5)
+spamUpgrade("StrongestSorcererEvo5")
 
 -- ===========================
 -- AUTO REPLAY
