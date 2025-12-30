@@ -15,20 +15,20 @@ RS:WaitForChild("Remotes"):WaitForChild("AutoSkip"):FireServer()
 -- Đợi đủ tiền
 local function waitIf(amount)
     while Money.Value < amount do
-        task.wait(0.3)
+        task.wait(0.2)
     end
 end
 
--- Spam nâng trong 20 giây
+-- Spam nâng trong 30 giây
 local function spamUpgrade(towerName)
     local start = tick()
-    while tick() - start < 20 do
+    while tick() - start < 30 do
         pcall(function()
             Func.UpgradeTower:InvokeServer(
                 workspace.Towers:WaitForChild(towerName)
             )
         end)
-        task.wait(0.15)
+        task.wait(0.05)
     end
 end
 
